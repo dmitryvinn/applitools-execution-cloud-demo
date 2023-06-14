@@ -58,7 +58,7 @@ public class AcmeBankTests {
         WebDriverManager.chromedriver().setup();
 
         // Read the Applitools API key from an environment variable.
-        applitoolsApiKey = "Ki0M8Ou7jKHy10908pvpBGiKb5V8lWnDNK2GfFZQzmrI0110";
+        applitoolsApiKey = "";
 
         // Read the headless mode setting from an environment variable.
         // Use headless mode for Continuous Integration (CI) execution.

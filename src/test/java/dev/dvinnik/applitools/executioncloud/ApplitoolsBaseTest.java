@@ -10,13 +10,11 @@ import com.applitools.eyes.visualgrid.services.VisualGridRunner;
 
 import dev.dvinnik.applitools.executioncloud.utils.PropertyKey;
 import dev.dvinnik.applitools.executioncloud.utils.TestPropertiesUtil;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import testzeus.base.SFPageBase;
 
 public class ApplitoolsBaseTest {
 
@@ -28,48 +26,48 @@ public class ApplitoolsBaseTest {
     protected static WebDriver driver;
 
     protected Eyes eyes;
-
-    @BeforeAll
-    static void setupAll() {
-        WebDriverManager.chromedriver().setup();
-    }
-
-    @BeforeEach
-    void setup() {
-        driver = new ChromeDriver();
-    }
-
-    @AfterEach
-    void teardown() {
-        eyes.closeAsync();
-        driver.quit();
-
-    }
-
-    @BeforeAll
-    public static void setUpConfigAndRunner() {
-        runner = new VisualGridRunner(new RunnerOptions().testConcurrency(1));
-
-        config = new Configuration();
-        config.setApiKey(APPLITOOLS_API_KEY);
-
-        final BatchInfo batch = new BatchInfo("Test ");
-        config.setBatch(batch);
-
-
-
-        config.addBrowser(1024, 768, BrowserType.CHROME);
-    }
-
-
-    @BeforeEach
-    public void openBrowserAndEyes(TestInfo testInfo) {
-        eyes = new Eyes(runner);
-        eyes.setConfiguration(config);
-
-        eyes.open(
-                driver,
-                "TestZeus Demo",
-                testInfo.getDisplayName());
-    }
+//
+//    @BeforeAll
+//    static void setupAll() {
+//        WebDriverManager.chromedriver().setup();
+//    }
+//
+//    @BeforeEach
+//    void setup() {
+//        driver = new ChromeDriver();
+//    }
+//
+//    @AfterEach
+//    void teardown() {
+//        eyes.closeAsync();
+//        driver.quit();
+//
+//    }
+//
+//    @BeforeAll
+//    public static void setUpConfigAndRunner() {
+//        runner = new VisualGridRunner(new RunnerOptions().testConcurrency(1));
+//
+//        config = new Configuration();
+//        config.setApiKey(APPLITOOLS_API_KEY);
+//
+//        final BatchInfo batch = new BatchInfo("Test ");
+//        config.setBatch(batch);
+//
+//
+//
+//        config.addBrowser(1024, 768, BrowserType.CHROME);
+//    }
+//
+//
+//    @BeforeEach
+//    public void openBrowserAndEyes(TestInfo testInfo) {
+//        eyes = new Eyes(runner);
+//        eyes.setConfiguration(config);
+//
+//        eyes.open(
+//                driver,
+//                "TestZeus Demo",
+//                testInfo.getDisplayName());
+//    }
 }

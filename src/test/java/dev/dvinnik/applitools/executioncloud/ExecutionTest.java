@@ -160,16 +160,11 @@ public class ExecutionTest {
     @Test
     public void validateSectionsOnHomePage() {
 
-        // Load the login page.
         driver.get("https://execution-cloud-demo-app.vercel.app/");
 
-        // Perform login.
-        try {
-            driver.findElement(By.id("docs-title"));
+     
+        driver.findElement(By.id("docs-title"));
 
-        } catch (Exception e){
-
-        }
         driver.findElement(By.id("docs-desc"));
 
         driver.findElement(By.id("learn-title"));
